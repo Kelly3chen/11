@@ -8,10 +8,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "11",
 			"location": {
 				"type": "AmazonS3Location",
-				"bucketName": "1111ss",
-				"fileName": "1111s"
+				"bucketName": "1111ss"
 			}
 		},
 		"schema": []
