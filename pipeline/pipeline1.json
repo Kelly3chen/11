@@ -16,13 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "ExcelSource",
+						"type": "JsonSource",
 						"storeSettings": {
-							"type": "AmazonS3ReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "https://1111ss.s3.ap-northeast-3.amazonaws.com/11.xls",
-							"wildcardFileName": "11.xls",
+							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
@@ -38,7 +40,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel1",
+						"referenceName": "Json2",
 						"type": "DatasetReference"
 					}
 				],
