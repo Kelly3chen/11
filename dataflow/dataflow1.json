@@ -15,9 +15,6 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string ($parameter1)",
-				"}",
 				"source(output(",
 				"          ID as integer,",
 				"          Name as string,",
