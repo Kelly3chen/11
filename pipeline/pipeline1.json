@@ -188,6 +188,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"cqq": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"forach": {
 				"type": "Array"
