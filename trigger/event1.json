@@ -3,11 +3,17 @@
 	"properties": {
 		"description": "when blob create",
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
 					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline4",
 					"type": "PipelineReference"
 				}
 			}
