@@ -89,6 +89,14 @@
 				}
 			}
 		],
+		"variables": {
+			"forach": {
+				"type": "Array",
+				"defaultValue": [
+					"‘"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
