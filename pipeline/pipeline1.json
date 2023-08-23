@@ -87,14 +87,17 @@
 					},
 					"traceLevel": "Coarse"
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"variables": {
 			"forach": {
-				"type": "Array",
-				"defaultValue": [
-					"‘"
-				]
+				"type": "Array"
 			}
 		},
 		"annotations": []
