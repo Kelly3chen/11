@@ -173,7 +173,7 @@
 						"mappings": [
 							{
 								"sink": {
-									"path": "$['Column_1']"
+									"path": "$"
 								}
 							}
 						]
