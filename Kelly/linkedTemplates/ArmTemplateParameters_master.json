@@ -23,6 +23,9 @@
 		"AzureSqlDatabase2_connectionString": {
 			"value": ""
 		},
+		"onpremisefile1_password": {
+			"value": ""
+		},
 		"AmazonS31_properties_typeProperties_accessKeyId": {
 			"value": "AKIA2NUZXS3LOFI43ZI7"
 		},
@@ -31,6 +34,12 @@
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://Kellychen.vault.azure.net/"
+		},
+		"onpremisefile1_properties_typeProperties_host": {
+			"value": "C:\\Users\\cq\\Desktop\\New folder"
+		},
+		"onpremisefile1_properties_typeProperties_userId": {
+			"value": "kellychen"
 		},
 		"event1_properties_typeProperties_scope": {
 			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
