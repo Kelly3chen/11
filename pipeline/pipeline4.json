@@ -160,7 +160,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(int(activity('web1').output.result.data.WebOutputValue), 5)\n\n",
+						"value": "@greater(int(activity('Lookup1').output.result.data.WebOutputValue), 5)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -267,7 +267,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Copy data3').output",
+						"value": "@activity('Lookup1').output.firstRowequals(activity('Lookup1').output, )",
 						"type": "Expression"
 					},
 					"activities": [
