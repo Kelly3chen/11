@@ -157,7 +157,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Copy data1').output. firstrow. sourcerowcount > , 10 ",
+						"value": "@activity('Web1').output. firstrow. sourcerowcount > 10",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
