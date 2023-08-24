@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT * FROM  AzureSqlTable1 WHERE ID > 100\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
