@@ -35,6 +35,9 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://Kellychen.vault.azure.net/"
 		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://Kellychen.vault.azure.net/"
+		},
 		"WebConnection1_properties_typeProperties_baseUrl": {
 			"value": "https://www.baidu.com"
 		},
