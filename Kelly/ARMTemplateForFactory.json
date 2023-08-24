@@ -47,15 +47,23 @@
 			"type": "string",
 			"defaultValue": "https://Kellychen.vault.azure.net/"
 		},
+		"WebConnection1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://www.baidu.com"
+		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "C:\\Users\\cq\\Desktop\\New folder"
+			"defaultValue": "\\\\10.0.0.180\\DESKTOP-8PA66UB\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"type": "string",
-			"defaultValue": "kellychen"
+			"defaultValue": "cq"
 		},
 		"event1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
+		},
+		"storage_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
@@ -364,6 +372,65 @@
 							"waitOnCompletion": true,
 							"parameters": {}
 						}
+					},
+					{
+						"name": "Until1",
+						"type": "Until",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@equals(pipeline().TriggerType,pipeline().TriggerType )",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy data2",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "AzureSqlSource",
+											"queryTimeout": "02:00:00",
+											"partitionOption": "None"
+										},
+										"sink": {
+											"type": "JsonSink",
+											"storeSettings": {
+												"type": "AzureBlobStorageWriteSettings"
+											},
+											"formatSettings": {
+												"type": "JsonWriteSettings"
+											}
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "AzureSqlTable1",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "Json2",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									]
+								}
+							],
+							"timeout": "0.12:00:00"
+						}
 					}
 				],
 				"policy": {
@@ -413,82 +480,6 @@
 						}
 					},
 					{
-						"name": "Switch1",
-						"type": "Switch",
-						"dependsOn": [
-							{
-								"activity": "Get Metadata1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [
-							{
-								"name": "age",
-								"value": "30"
-							}
-						],
-						"typeProperties": {
-							"on": {
-								"value": "@activity('Get Metadata1').output",
-								"type": "Expression"
-							},
-							"cases": [
-								{
-									"value": "Case1",
-									"activities": [
-										{
-											"name": "Copy data1",
-											"type": "Copy",
-											"dependsOn": [],
-											"policy": {
-												"timeout": "0.12:00:00",
-												"retry": 0,
-												"retryIntervalInSeconds": 30,
-												"secureOutput": false,
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"source": {
-													"type": "AzureSqlSource",
-													"queryTimeout": "02:00:00",
-													"partitionOption": "None"
-												},
-												"sink": {
-													"type": "JsonSink",
-													"storeSettings": {
-														"type": "AzureBlobStorageWriteSettings",
-														"copyBehavior": "FlattenHierarchy"
-													},
-													"formatSettings": {
-														"type": "JsonWriteSettings"
-													}
-												},
-												"enableStaging": false
-											},
-											"inputs": [
-												{
-													"referenceName": "AzureSqlTable1",
-													"type": "DatasetReference",
-													"parameters": {}
-												}
-											],
-											"outputs": [
-												{
-													"referenceName": "Json2",
-													"type": "DatasetReference",
-													"parameters": {}
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					},
-					{
 						"name": "Lookup1",
 						"type": "Lookup",
 						"dependsOn": [],
@@ -518,6 +509,178 @@
 							},
 							"firstRowOnly": true
 						}
+					},
+					{
+						"name": "Switch1",
+						"type": "Switch",
+						"dependsOn": [
+							{
+								"activity": "Get Metadata1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"on": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"cases": [
+								{
+									"value": "Case1",
+									"activities": [
+										{
+											"name": "Data flow1",
+											"type": "ExecuteDataFlow",
+											"dependsOn": [],
+											"policy": {
+												"timeout": "0.12:00:00",
+												"retry": 0,
+												"retryIntervalInSeconds": 30,
+												"secureOutput": false,
+												"secureInput": false
+											},
+											"userProperties": [],
+											"typeProperties": {
+												"dataflow": {
+													"referenceName": "dataflow1",
+													"type": "DataFlowReference",
+													"parameters": {
+														"parameter1": {
+															"value": "'@{activity('Get Metadata1').output}'",
+															"type": "Expression"
+														}
+													},
+													"datasetParameters": {
+														"source1": {},
+														"sink1": {}
+													}
+												},
+												"staging": {},
+												"compute": {
+													"coreCount": 8,
+													"computeType": "General"
+												},
+												"traceLevel": "Fine"
+											}
+										}
+									]
+								}
+							]
+						}
+					},
+					{
+						"name": "If Condition1",
+						"type": "IfCondition",
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@empty(pipeline().RunId)",
+								"type": "Expression"
+							},
+							"ifFalseActivities": [
+								{
+									"name": "Copy data2",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "AzureSqlSource",
+											"queryTimeout": "02:00:00",
+											"partitionOption": "None"
+										},
+										"sink": {
+											"type": "JsonSink",
+											"storeSettings": {
+												"type": "AzureBlobStorageWriteSettings"
+											},
+											"formatSettings": {
+												"type": "JsonWriteSettings"
+											}
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "AzureSqlTable1",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "Json1",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									]
+								}
+							],
+							"ifTrueActivities": [
+								{
+									"name": "Copy data1",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "AzureSqlSource",
+											"queryTimeout": "02:00:00",
+											"partitionOption": "None"
+										},
+										"sink": {
+											"type": "JsonSink",
+											"storeSettings": {
+												"type": "AzureBlobStorageWriteSettings"
+											},
+											"formatSettings": {
+												"type": "JsonWriteSettings"
+											}
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "AzureSqlTable1",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "Json2",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									]
+								}
+							]
+						}
 					}
 				],
 				"policy": {
@@ -533,7 +696,9 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
-				"[concat(variables('factoryId'), '/datasets/Json2')]"
+				"[concat(variables('factoryId'), '/datasets/Json1')]",
+				"[concat(variables('factoryId'), '/datasets/Json2')]",
+				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
 			]
 		},
 		{
@@ -869,6 +1034,26 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WebConnection1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "WebConnection",
+				"typeProperties": {
+					"baseUrl": "[parameters('WebConnection1_properties_typeProperties_baseUrl')]",
+					"enableServerCertificateValidation": true
+				},
+				"connectVia": {
+					"referenceName": "SHIR1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/SHIR1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/onpremisefile1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -940,12 +1125,44 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/storage')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline4",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/euhh/blobs/",
+					"ignoreEmptyBlobs": false,
+					"scope": "[parameters('storage_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline4')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SHIR1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"type": "SelfHosted",
-				"typeProperties": {}
+				"typeProperties": {
+					"selfContainedInteractiveAuthoringEnabled": true
+				}
 			},
 			"dependsOn": []
 		},

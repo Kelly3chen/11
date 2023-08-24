@@ -35,13 +35,19 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://Kellychen.vault.azure.net/"
 		},
+		"WebConnection1_properties_typeProperties_baseUrl": {
+			"value": "https://www.baidu.com"
+		},
 		"onpremisefile1_properties_typeProperties_host": {
-			"value": "C:\\Users\\cq\\Desktop\\New folder"
+			"value": "\\\\10.0.0.180\\DESKTOP-8PA66UB\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
-			"value": "kellychen"
+			"value": "cq"
 		},
 		"event1_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
+		},
+		"storage_properties_typeProperties_scope": {
 			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {

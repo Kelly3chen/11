@@ -47,15 +47,23 @@
 			"type": "string",
 			"defaultValue": "https://Kellychen.vault.azure.net/"
 		},
+		"WebConnection1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://www.baidu.com"
+		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "C:\\Users\\cq\\Desktop\\New folder"
+			"defaultValue": "\\\\10.0.0.180\\DESKTOP-8PA66UB\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"type": "string",
-			"defaultValue": "kellychen"
+			"defaultValue": "cq"
 		},
 		"event1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
+		},
+		"storage_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
@@ -136,6 +144,9 @@
 					"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 						"value": "[parameters('SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
 					},
+					"WebConnection1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('WebConnection1_properties_typeProperties_baseUrl')]"
+					},
 					"onpremisefile1_properties_typeProperties_host": {
 						"value": "[parameters('onpremisefile1_properties_typeProperties_host')]"
 					},
@@ -162,6 +173,9 @@
 					},
 					"event1_properties_typeProperties_scope": {
 						"value": "[parameters('event1_properties_typeProperties_scope')]"
+					},
+					"storage_properties_typeProperties_scope": {
+						"value": "[parameters('storage_properties_typeProperties_scope')]"
 					}
 				}
 			},
