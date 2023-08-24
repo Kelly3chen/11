@@ -56,16 +56,6 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "AzureSqlSource",
-									"queryTimeout": "02:00:00",
-									"partitionOption": "DynamicRange",
-									"partitionSettings": {
-										"partitionColumnName": "Age",
-										"partitionUpperBound": "30",
-										"partitionLowerBound": "10"
-									}
-								},
 								"sink": {
 									"type": "JsonSink",
 									"storeSettings": {
@@ -78,12 +68,6 @@
 								},
 								"enableStaging": false
 							},
-							"inputs": [
-								{
-									"referenceName": "AzureSqlTable1",
-									"type": "DatasetReference"
-								}
-							],
 							"outputs": [
 								{
 									"referenceName": "Json2",
@@ -121,6 +105,15 @@
 		],
 		"variables": {
 			"sV": {
+				"type": "String"
+			},
+			"date": {
+				"type": "Integer"
+			},
+			"date1": {
+				"type": "String"
+			},
+			"ID": {
 				"type": "String"
 			}
 		},
