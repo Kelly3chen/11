@@ -149,10 +149,6 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"expression": {
-						"value": "@activity('Web1').output",
-						"type": "Expression"
-					},
 					"ifFalseActivities": [
 						{
 							"name": "Copy data2",
