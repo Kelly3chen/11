@@ -157,7 +157,11 @@
 						"value": "@pipeline().DataFactory",
 						"type": "Expression"
 					},
-					"method": "POST"
+					"method": "POST",
+					"body": {
+						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
+						"type": "Expression"
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "WebConnection1",
