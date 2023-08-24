@@ -25,7 +25,7 @@
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": {
-						"value": "variables('date')",
+						"value": "@variables('date1')",
 						"type": "Expression"
 					}
 				}
@@ -33,6 +33,9 @@
 		],
 		"variables": {
 			"date": {
+				"type": "Integer"
+			},
+			"date1": {
 				"type": "String"
 			}
 		},
