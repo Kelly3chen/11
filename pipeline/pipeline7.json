@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT * FROM dbo.MyTable WHERE IncrementalID > 100\n",
+						"sqlReaderQuery": "SELECT * FROM dbo.MyTable WHERE ID > 100\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
