@@ -86,6 +86,22 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"cases": []
+				}
 			}
 		],
 		"variables": {
