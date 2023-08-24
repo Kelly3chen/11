@@ -63,6 +63,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@equals(pipeline().TriggerType,pipeline().TriggerType )",
+						"type": "Expression"
+					},
 					"timeout": "0.12:00:00"
 				}
 			}
