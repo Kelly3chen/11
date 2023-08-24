@@ -80,7 +80,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": {
-						"value": "@activity('Lookup1').output",
+						"value": "@pipeline().RunId",
 						"type": "Expression"
 					},
 					"method": "POST",
@@ -88,6 +88,10 @@
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
 						"type": "Expression"
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "WebConnection1",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
