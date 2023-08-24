@@ -120,12 +120,6 @@
 			}
 		],
 		"variables": {
-			"date": {
-				"type": "Integer"
-			},
-			"date1": {
-				"type": "String"
-			},
 			"ID": {
 				"type": "String"
 			}
