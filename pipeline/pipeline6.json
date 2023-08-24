@@ -56,6 +56,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
 								"sink": {
 									"type": "JsonSink",
 									"storeSettings": {
@@ -68,6 +73,12 @@
 								},
 								"enableStaging": false
 							},
+							"inputs": [
+								{
+									"referenceName": "AzureSqlTable1",
+									"type": "DatasetReference"
+								}
+							],
 							"outputs": [
 								{
 									"referenceName": "Json2",
