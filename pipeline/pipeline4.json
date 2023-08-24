@@ -158,6 +158,10 @@
 						"type": "Expression"
 					},
 					"method": "POST"
+				},
+				"linkedServiceName": {
+					"referenceName": "WebConnection1",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
