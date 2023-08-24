@@ -27,6 +27,11 @@
 				}
 			}
 		],
+		"variables": {
+			"date": {
+				"type": "Integer"
+			}
+		},
 		"annotations": []
 	}
 }
