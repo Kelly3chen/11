@@ -101,7 +101,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"on": {
-						"value": "@activity('Get Metadata1').output",
+						"value": "@activity('Get Metadata1').output.pipelineReturnValue",
 						"type": "Expression"
 					},
 					"cases": [
