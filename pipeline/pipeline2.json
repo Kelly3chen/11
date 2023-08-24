@@ -64,7 +64,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@not(activity('copy data2').outputs['Copy data2'].status == 'Succeeded')\n",
+						"value": "@not(activity('copy data2').outputs['Copy data2'].status == 'Succeeded')\n\n",
 						"type": "Expression"
 					},
 					"activities": [
