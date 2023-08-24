@@ -79,7 +79,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://www.",
+					"url": "https://www.google.cn",
 					"method": "POST",
 					"body": {
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
