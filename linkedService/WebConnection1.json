@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "WebConnection",
 		"typeProperties": {
-			"baseUrl": "www.baidu.com",
+			"baseUrl": "https://www.baidu.com",
 			"enableServerCertificateValidation": true
 		},
 		"connectVia": {
