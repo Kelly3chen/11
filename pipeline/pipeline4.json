@@ -79,7 +79,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://www.google.cn",
+					"url": "https://www.baidu.com",
 					"method": "POST",
 					"body": {
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
@@ -100,6 +100,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"on": {
+						"value": "@activity('Get Metadata1').output",
+						"type": "Expression"
+					},
 					"cases": []
 				}
 			}
