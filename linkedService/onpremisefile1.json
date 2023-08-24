@@ -6,8 +6,8 @@
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "C:\\Users\\cq\\Desktop\\New folder",
-			"userId": "kellychen",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4YTc3NWQ2Ny02NDc1LTQ2ZmQtYTk3ZS0wMzZlYzY3MWIzZmMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"userId": "cq",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmMzA4ZDU3Zi1iOWNhLTRlMmYtODcxZS1iOTRlYWU4M2IyNjYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR1",
