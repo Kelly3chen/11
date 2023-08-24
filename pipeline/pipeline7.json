@@ -35,7 +35,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "lastcopiedID",
+						"activity": "Lookup1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -91,30 +91,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "lastcopiedID",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "ID",
-					"value": {
-						"value": "@activity('Lookup1').output",
-						"type": "Expression"
-					}
-				}
 			}
 		],
 		"variables": {
