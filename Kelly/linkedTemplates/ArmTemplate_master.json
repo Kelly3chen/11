@@ -57,7 +57,7 @@
 		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "\\\\10.0.0.180\\DESKTOP-8PA66UB\\New folder"
+			"defaultValue": "\\\\DESKTOP-8PA66UB\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"type": "string",

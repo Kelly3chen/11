@@ -42,7 +42,7 @@
 			"value": "https://www.baidu.com"
 		},
 		"onpremisefile1_properties_typeProperties_host": {
-			"value": "\\\\10.0.0.180\\DESKTOP-8PA66UB\\New folder"
+			"value": "\\\\DESKTOP-8PA66UB\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"value": "cq"
