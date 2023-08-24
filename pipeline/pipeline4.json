@@ -157,7 +157,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(int(activity('web1').output.firstRow.WebOutputValue), 5)\n",
+						"value": "@greater(int(activity('web1').output.WebOutputValue), 5)\n",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
