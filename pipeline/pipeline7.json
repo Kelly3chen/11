@@ -16,13 +16,18 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT * FROM  AzureSqlTable1 WHERE ID > 100\n",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
 					},
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "Json2",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -68,10 +73,29 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ID"
+									"name": "ID",
+									"type": "Int32"
 								},
 								"sink": {
-									"path": "$['Column_1']"
+									"path": "$['ID']"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "Int32"
+								},
+								"sink": {
+									"path": "$['Age']"
 								}
 							}
 						]
