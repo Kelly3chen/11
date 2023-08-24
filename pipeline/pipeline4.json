@@ -143,7 +143,14 @@
 			{
 				"name": "Web1",
 				"type": "WebActivity",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -153,11 +160,19 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"url": {
+						"value": "@activity('Lookup1').output",
+						"type": "Expression"
+					},
 					"method": "POST",
 					"body": {
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
 						"type": "Expression"
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "WebConnection1",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
