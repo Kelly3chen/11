@@ -146,9 +146,20 @@
 			{
 				"name": "If Condition1",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Web1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@activity('Copy data1').output. firstrow. sourcerowcount > , 10 ",
+						"type": "Expression"
+					},
 					"ifFalseActivities": [
 						{
 							"name": "Copy data2",
