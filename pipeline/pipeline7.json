@@ -24,10 +24,7 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": {
-						"value": "@variables('ID')",
-						"type": "Expression"
-					}
+					"firstRowOnly": false
 				}
 			},
 			{
