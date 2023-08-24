@@ -77,10 +77,29 @@
 									"mappings": [
 										{
 											"source": {
-												"name": "ID"
+												"name": "ID",
+												"type": "Int32"
 											},
 											"sink": {
-												"path": "$['Column_1']"
+												"path": "$['ID']"
+											}
+										},
+										{
+											"source": {
+												"name": "Name",
+												"type": "String"
+											},
+											"sink": {
+												"path": "$['Name']"
+											}
+										},
+										{
+											"source": {
+												"name": "Age",
+												"type": "Int32"
+											},
+											"sink": {
+												"path": "$['Age']"
 											}
 										}
 									]
