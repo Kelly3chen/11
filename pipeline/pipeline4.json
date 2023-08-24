@@ -129,7 +129,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(int(activity('Lookup1').output.ResultValue), 5)",
+						"value": "@greater(int(activity('Lookup1').output.ValueToCompare), 5)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
