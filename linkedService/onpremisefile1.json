@@ -7,7 +7,7 @@
 		"typeProperties": {
 			"host": "\\\\DESKTOP-8PA66UB\\New folder",
 			"userId": "cq",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NTk2MDE2OC1lMzA2LTQ3YTYtODQzNi1jYzRkMGY4N2VmNTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3ZDI1Yzk3Ny1kNjk1LTQ0NWMtOGYwNy05YjA0ODFmYjRjM2UiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR1",
