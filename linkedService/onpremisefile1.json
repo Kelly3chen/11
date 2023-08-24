@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "C:\\Users\\cq\\Desktop\\New folder",
+			"host": "\\\\DESKTOP-8PA66UB\\New folder",
 			"userId": "cq",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmMzA4ZDU3Zi1iOWNhLTRlMmYtODcxZS1iOTRlYWU4M2IyNjYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NTk2MDE2OC1lMzA2LTQ3YTYtODQzNi1jYzRkMGY4N2VmNTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR1",
