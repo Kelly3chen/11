@@ -153,6 +153,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"url": {
+						"value": "@pipeline().DataFactory",
+						"type": "Expression"
+					},
 					"method": "POST"
 				}
 			}
