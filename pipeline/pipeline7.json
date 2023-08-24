@@ -23,13 +23,17 @@
 					"dataset": {
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
+					},
+					"firstRowOnly": {
+						"value": "variables('date')",
+						"type": "Expression"
 					}
 				}
 			}
 		],
 		"variables": {
 			"date": {
-				"type": "Integer"
+				"type": "String"
 			}
 		},
 		"annotations": []
