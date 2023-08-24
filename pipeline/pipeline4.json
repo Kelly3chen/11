@@ -60,41 +60,6 @@
 				}
 			},
 			{
-				"name": "Web1",
-				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": {
-						"value": "@pipeline().RunId",
-						"type": "Expression"
-					},
-					"method": "POST",
-					"body": {
-						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
-						"type": "Expression"
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "WebConnection1",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
 				"name": "Switch1",
 				"type": "Switch",
 				"dependsOn": [
@@ -155,7 +120,7 @@
 				"type": "IfCondition",
 				"dependsOn": [
 					{
-						"activity": "Web1",
+						"activity": "Lookup1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
