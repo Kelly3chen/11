@@ -129,7 +129,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Copy data1')",
+						"value": "@empty(activity('Copy data1').output)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
