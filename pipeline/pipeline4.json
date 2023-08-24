@@ -153,10 +153,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": {
-						"value": "@pipeline().DataFactory",
-						"type": "Expression"
-					},
 					"method": "POST",
 					"body": {
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
