@@ -81,6 +81,10 @@
 		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"type": "secureString"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
 		}
 	},
 	"variables": {
@@ -843,12 +847,7 @@
 										"source": {
 											"type": "AzureSqlSource",
 											"queryTimeout": "02:00:00",
-											"partitionOption": "DynamicRange",
-											"partitionSettings": {
-												"partitionColumnName": "Age",
-												"partitionUpperBound": "30",
-												"partitionLowerBound": "10"
-											}
+											"partitionOption": "None"
 										},
 										"sink": {
 											"type": "JsonSink",
@@ -860,7 +859,39 @@
 												"type": "JsonWriteSettings"
 											}
 										},
-										"enableStaging": false
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"mappings": [
+												{
+													"source": {
+														"name": "ID",
+														"type": "Int32"
+													},
+													"sink": {
+														"path": "$['ID']"
+													}
+												},
+												{
+													"source": {
+														"name": "Name",
+														"type": "String"
+													},
+													"sink": {
+														"path": "$['Name']"
+													}
+												},
+												{
+													"source": {
+														"name": "Age",
+														"type": "Int32"
+													},
+													"sink": {
+														"path": "$['Age']"
+													}
+												}
+											]
+										}
 									},
 									"inputs": [
 										{
@@ -911,6 +942,148 @@
 				},
 				"variables": {
 					"sV": {
+						"type": "String"
+					},
+					"date": {
+						"type": "Integer"
+					},
+					"date1": {
+						"type": "String"
+					},
+					"ID": {
+						"type": "String"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
+				"[concat(variables('factoryId'), '/datasets/Json2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline7')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lookup1",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT * FROM dbo.MyTable WHERE ID > 100\n",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"dataset": {
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "JsonSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "JsonWriteSettings"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ID",
+											"type": "Int32"
+										},
+										"sink": {
+											"path": "$['ID']"
+										}
+									},
+									{
+										"source": {
+											"name": "Name",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Name']"
+										}
+									},
+									{
+										"source": {
+											"name": "Age",
+											"type": "Int32"
+										},
+										"sink": {
+											"path": "$['Age']"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Json2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"variables": {
+					"ID": {
 						"type": "String"
 					}
 				},
@@ -1373,7 +1546,7 @@
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {
-					"selfContainedInteractiveAuthoringEnabled": true
+					"selfContainedInteractiveAuthoringEnabled": false
 				}
 			},
 			"dependsOn": []
@@ -1468,6 +1641,26 @@
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "CustomEventsTrigger",
+				"typeProperties": {
+					"subjectEndsWith": "",
+					"subjectBeginsWith": "",
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"topic"
+					]
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }

@@ -62,6 +62,9 @@
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"value": ""
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
+		},
 		"containerUri": {
 			"value": ""
 		},
