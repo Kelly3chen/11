@@ -79,12 +79,15 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://www.baidu.com",
 					"method": "POST",
 					"body": {
 						"value": "{\n  \"weather\": \"27\",\n  \"year\": \"2023\"\n}\n",
 						"type": "Expression"
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "WebConnection1",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
