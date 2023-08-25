@@ -57,7 +57,7 @@
 		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "\\\\DESKTOP-8PA66UB\\New folder"
+			"defaultValue": "C:\\Users\\cq\\Desktop\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"type": "string",
@@ -71,6 +71,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
+		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
 			"type": "string",
 			"defaultValue": "33server.database.windows.net"
@@ -81,10 +85,6 @@
 		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"type": "secureString"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
 		}
 	},
 	"variables": {
@@ -1508,6 +1508,26 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "CustomEventsTrigger",
+				"typeProperties": {
+					"subjectEndsWith": "",
+					"subjectBeginsWith": "",
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"topic"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/tumbling')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -1546,7 +1566,7 @@
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {
-					"selfContainedInteractiveAuthoringEnabled": false
+					"selfContainedInteractiveAuthoringEnabled": true
 				}
 			},
 			"dependsOn": []
@@ -1641,26 +1661,6 @@
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [],
-				"type": "CustomEventsTrigger",
-				"typeProperties": {
-					"subjectEndsWith": "",
-					"subjectBeginsWith": "",
-					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
-					"events": [
-						"topic"
-					]
-				}
-			},
-			"dependsOn": []
 		}
 	]
 }

@@ -42,7 +42,7 @@
 			"value": "https://www.baidu.com"
 		},
 		"onpremisefile1_properties_typeProperties_host": {
-			"value": "\\\\DESKTOP-8PA66UB\\New folder"
+			"value": "C:\\Users\\cq\\Desktop\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"value": "cq"
@@ -53,6 +53,9 @@
 		"storage_properties_typeProperties_scope": {
 			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
+		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
 			"value": "33server.database.windows.net"
 		},
@@ -61,9 +64,6 @@
 		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"value": ""
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
 		}
 	}
 }

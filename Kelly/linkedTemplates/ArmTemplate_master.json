@@ -57,7 +57,7 @@
 		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "\\\\DESKTOP-8PA66UB\\New folder"
+			"defaultValue": "C:\\Users\\cq\\Desktop\\New folder"
 		},
 		"onpremisefile1_properties_typeProperties_userId": {
 			"type": "string",
@@ -71,6 +71,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
+		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
 			"type": "string",
 			"defaultValue": "33server.database.windows.net"
@@ -81,10 +85,6 @@
 		},
 		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"type": "secureString"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
 		},
 		"containerUri": {
 			"type": "string",
@@ -149,6 +149,9 @@
 					"storage_properties_typeProperties_scope": {
 						"value": "[parameters('storage_properties_typeProperties_scope')]"
 					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					},
 					"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
 						"value": "[parameters('SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
 					},
@@ -157,9 +160,6 @@
 					},
 					"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 						"value": "[parameters('SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
-					},
-					"trigger1_properties_typeProperties_scope": {
-						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					},
 					"WebConnection1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('WebConnection1_properties_typeProperties_baseUrl')]"
