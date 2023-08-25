@@ -92,6 +92,7 @@
 						"value": "@variables('forach')",
 						"type": "Expression"
 					},
+					"batchCount": 50,
 					"activities": [
 						{
 							"name": "Copy data2",
