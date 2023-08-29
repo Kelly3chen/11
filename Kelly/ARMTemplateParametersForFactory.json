@@ -23,6 +23,9 @@
 		"AzureSqlDatabase2_connectionString": {
 			"value": ""
 		},
+		"linkedService1_password": {
+			"value": ""
+		},
 		"onpremisefile1_password": {
 			"value": ""
 		},
@@ -40,6 +43,9 @@
 		},
 		"WebConnection1_properties_typeProperties_baseUrl": {
 			"value": "https://www.baidu.com"
+		},
+		"linkedService1_properties_typeProperties_userName": {
+			"value": "kellychen"
 		},
 		"onpremisefile1_properties_typeProperties_host": {
 			"value": "C:\\Users\\cq\\Desktop\\New folder"
