@@ -1,0 +1,15 @@
+{
+	"name": "WebConnection1",
+	"properties": {
+		"annotations": [],
+		"type": "WebConnection",
+		"typeProperties": {
+			"baseUrl": "https://www.baidu.com",
+			"enableServerCertificateValidation": true
+		},
+		"connectVia": {
+			"referenceName": "SHIR1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

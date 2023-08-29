@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Kelly"
+		},
+		"AmazonS31_secretAccessKey": {
+			"value": ""
+		},
+		"AmazonS32_secretAccessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"linkedService1_password": {
+			"value": ""
+		},
+		"onpremisefile1_password": {
+			"value": ""
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": "AKIA2NUZXS3LOFI43ZI7"
+		},
+		"AmazonS32_properties_typeProperties_accessKeyId": {
+			"value": "AKIA4MIYDLKLQ33S5UFV"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://Kellychen.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://Kellychen.vault.azure.net/"
+		},
+		"WebConnection1_properties_typeProperties_baseUrl": {
+			"value": "https://www.baidu.com"
+		},
+		"linkedService1_properties_typeProperties_userName": {
+			"value": "kellychen"
+		},
+		"onpremisefile1_properties_typeProperties_host": {
+			"value": "C:\\Users\\cq\\Desktop\\New folder"
+		},
+		"onpremisefile1_properties_typeProperties_userId": {
+			"value": "cq"
+		},
+		"event1_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
+		},
+		"storage_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.Storage/storageAccounts/scewd"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3387cfd-180a-4a11-83d9-2a639669807c/resourceGroups/cq/providers/Microsoft.EventGrid/topics/ddd"
+		},
+		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "33server.database.windows.net"
+		},
+		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "kellychen"
+		},
+		"SSIS11_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

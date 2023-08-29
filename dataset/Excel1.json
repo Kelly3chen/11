@@ -1,0 +1,19 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AmazonS31",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "11",
+			"location": {
+				"type": "AmazonS3Location",
+				"bucketName": "1111ss"
+			}
+		},
+		"schema": []
+	}
+}
