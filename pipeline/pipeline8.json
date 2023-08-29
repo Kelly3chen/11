@@ -15,7 +15,15 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"scriptPath": ""
+					"scriptPath": "euhh",
+					"scriptLinkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "linkedService1",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
